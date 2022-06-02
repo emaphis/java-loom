@@ -23,7 +23,6 @@
                     <release>19</release>
                     <compilerArgs>
                         <arg>--enable-preview</arg>
-                        <arg>--add-modules=jdk.incubator.concurrent</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
