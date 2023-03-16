@@ -1,7 +1,18 @@
 # Some Java Loom Experiments
+
 Some Loom experiments
 
-Get Loom EA builds from <https://jdk.java.net/loom/>
+JDK 19, 20 include loom as a preview feature, JDK 21 may include it standard
+
+Code still wont run in an ide, or maven so must run from the command line
+
+'''
+> javac --release 20 --enable-preview -Xlint:preview ClassWithPreview.java
+'''
+
+'''
+> java --enable-preview ClassWithPreview
+'''
 
 Some interesting repositories
 

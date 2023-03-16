@@ -4,7 +4,7 @@ package my.project.java.loom;
 import java.util.Properties;
 
 /**
- *
+ * Utility program that prints out the JDK version information
  * @author emaph
  */
 public class JavaLoomVersion {
