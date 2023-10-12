@@ -1,16 +1,24 @@
 
 package my.project.java.loom;
 
+import static java.lang.Runtime.getRuntime;
 import java.util.Properties;
 
 /**
- * Utility program that prints out the JDK version information
+ * Utility program that prints out the JDK version information,
+ * and machine version.s
  * @author emaph
  */
 public class JavaLoomVersion {
 
     public static void main(String[] args) {
-        System.out.println("Hello Loom!\n");System.out.println("******************** Hello, JDK ********************");
+        findVersion();
+        findCPU();
+        System.out.println();
+    }
+
+    private static void findVersion() {
+        System.out.println("******************** Hello, JDK ********************");
         Properties prop = System.getProperties();
 
         String version = prop.getProperty("java.version");
@@ -29,5 +37,13 @@ public class JavaLoomVersion {
         System.out.println("User dir:  " + path);
         System.out.println("Temp dir:  " + temp);
         System.out.println("****************************************************");
+    }
+
+    static void findCPU() {
+        int cpus = getRuntime().availableProcessors();
+        long mem = getRuntime().maxMemory() / (1024 * 1024);
+        long max = getRuntime().totalMemory() / (1024 * 1024);
+        long free = getRuntime().freeMemory();
+        System.out.println("cpus=" + cpus + " mem=" + mem + " max=" + max + " free=" + free);
     }
 }

@@ -25,8 +25,11 @@ public class DHowManyVirtualThreads {
             counter.incrementAndGet();
         })).toList();
 
+        int i = 0;
         for (var thread : threads) {
-            //System.out.print(" " + i++);
+            i++;
+            if (i % 100 == 100)
+                System.out.print(" " + i);
             thread.start();
         }
         for (var thread : threads) {

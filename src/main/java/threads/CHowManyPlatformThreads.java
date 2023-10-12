@@ -11,8 +11,9 @@ import java.util.stream.IntStream;
  */
 public class CHowManyPlatformThreads {
     public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
-        var barrier = new CyclicBarrier(100_000);
-        var threads = IntStream.range(0, 100_000)
+        var number = 100_000;
+        var barrier = new CyclicBarrier(number);
+        var threads = IntStream.range(0, number)
                 .mapToObj(i -> new Thread(() -> {
                     try {
                         barrier.await();
@@ -22,7 +23,9 @@ public class CHowManyPlatformThreads {
                 })).toList();
         int i = 0;
         for (var thread: threads) {
-            System.out.print(" " + i++);
+            i++;
+            if (i % 100 == 0)
+                System.out.print(" " + i);
             thread.start();
         }
         for (var thread: threads) {
