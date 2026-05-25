@@ -6,7 +6,7 @@
     <artifactId>java-loom</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <description>A project ot experiment with loom concurency feautues</description>
+    <description>A project of experiment with loom concurency features</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,11 +17,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
+                <version>3.15.0</version>
                 <configuration>
-                    <release>24</release>
+                    <release>26</release>
                     <compilerArgs>
                         <arg>--enable-preview</arg>
+                        <arg>-Xlint</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
